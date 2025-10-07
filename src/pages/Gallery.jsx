@@ -32,7 +32,7 @@ const Gallery = () => {
 
   // Load liked photos from localStorage on component mount
   useEffect(() => {
-    const savedLikedPhotos = localStorage.getItem('pabede_liked_photos')
+    const savedLikedPhotos = localStorage.getItem('anonymous_gallery_liked_photos')
     if (savedLikedPhotos) {
       try {
         const likedArray = JSON.parse(savedLikedPhotos)
@@ -46,9 +46,9 @@ const Gallery = () => {
   // Save liked photos to localStorage whenever it changes
   useEffect(() => {
     if (likedPhotos.size > 0) {
-      localStorage.setItem('pabede_liked_photos', JSON.stringify([...likedPhotos]))
+      localStorage.setItem('anonymous_gallery_liked_photos', JSON.stringify([...likedPhotos]))
     } else {
-      localStorage.removeItem('pabede_liked_photos')
+      localStorage.removeItem('anonymous_gallery_liked_photos')
     }
   }, [likedPhotos])
 

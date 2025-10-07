@@ -781,7 +781,7 @@ const FloatingActions = () => {
 
                     <div>
                       <h5 className="font-semibold text-white mb-2"> 5: is  to   ‌</h5>
-                      <p>Anonymous Gallery to      ‌.   that  in   ‌     is  ‌    to in  copyright@pabede.com  ...</p>
+                      <p>Anonymous Gallery to      ‌.   that  in   ‌     is  ‌    to in  copyright@anonymous-gallery.com  ...</p>
                     </div>
 
                     <div>

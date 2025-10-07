@@ -1,4 +1,3 @@
--- PaBede Database Schema
 -- SQLite schema for the foot photo album application
 
 -- Photos table (approved and live photos)

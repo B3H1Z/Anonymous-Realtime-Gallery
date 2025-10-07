@@ -30,7 +30,7 @@ const logger = winston.createLogger({
         winston.format.errors({ stack: true }),
         winston.format.json()
     ),
-    defaultMeta: { service: 'pabede-api' },
+    defaultMeta: { service: 'anonymous-gallery-api' },
     transports: [
         // Write all logs to file
         new winston.transports.File({
