@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, -apple-system, sans-serif;
+    direction: ltr;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+    /* Enhanced smooth scrolling */
+    scroll-padding-top: 150px;
+    /* iOS safe area support - background color for notch/Dynamic Island area */
+    background-color: #111827; /* bg-gray-900 */
+    /* Ensure full height including safe areas */
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  body {
+    direction: ltr;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* iOS momentum scrolling */
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    /* Prevent scroll jank */
+    overscroll-behavior-y: contain;
+    /* iOS safe area padding - respects Dynamic Island/notch */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    /* Match background with html */
+    background-color: #111827; /* bg-gray-900 */
+    /* Ensure full height */
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .glassmorphism-dark {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, #ec4899 0%, #be185d 50%, #fbbf24 100%);
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, #ec4899 0%, #be185d 25%, #f472b6 50%, #fbbf24 75%, #f59e0b 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+  }
+
+  .card-hover {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px) translateZ(0);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .card-hover:hover img {
+    transform: scale(1.08);
+  }
+
+  .smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    /* Prevent scroll bounce on edges */
+    overscroll-behavior: contain;
+  }
+
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    /* Remove will-change to prevent unnecessary GPU usage */
+  }
+
+  /* Smooth grid layout transitions */
+  .gallery-grid {
+    /* Contain layout shifts */
+    contain: layout style paint;
+  }
+
+  /* Smooth image loading */
+  .gallery-image {
+    /* Prevent layout shift during image load */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 640px;
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out;
+}

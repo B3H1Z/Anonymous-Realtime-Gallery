@@ -1,0 +1,72 @@
+{
+  "name": "anonymous-realtime-gallery",
+  "version": "1.0.0",
+  "description": "Anonymous Real-Time Gallery - A platform for sharing images anonymously in real-time",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "vite",
+    "dev:full": "concurrently \"node server.js\" \"npm run dev\"",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "nodemon server.js",
+    "install-deps": "npm install",
+    "setup": "npm install && mkdir -p public/images && mkdir -p uploads"
+  },
+  "keywords": [
+    "photo-gallery",
+    "masonry",
+    "image-upload",
+    "moderation",
+    "web-application"
+  ],
+  "author": "Anonymous Gallery Team",
+  "license": "MIT",
+  "dependencies": {
+    "@hcaptcha/react-hcaptcha": "^1.12.1",
+    "@headlessui/react": "^2.2.9",
+    "@tanstack/react-query": "^5.90.2",
+    "bcryptjs": "^3.0.2",
+    "better-sqlite3": "^12.4.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^4.18.2",
+    "express-rate-limit": "^8.1.0",
+    "express-slow-down": "^3.0.0",
+    "express-validator": "^7.2.1",
+    "framer-motion": "^12.23.22",
+    "helmet": "^8.1.0",
+    "joi": "^18.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.544.0",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^7.0.6",
+    "pg": "^8.16.3",
+    "react-hot-toast": "^2.6.0",
+    "react-modern-drawer": "^1.4.0",
+    "react-router-dom": "^7.9.3",
+    "react-simple-typewriter": "^5.0.1",
+    "react-webcam": "^7.2.0",
+    "sharp": "^0.33.0",
+    "sonner": "^2.0.7",
+    "typed.js": "^2.1.0",
+    "uuid": "^9.0.1",
+    "winston": "^3.18.3",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.3",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.0.1",
+    "postcss": "^8.5.6",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^3.4.17",
+    "vite": "^7.1.7"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
