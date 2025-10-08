@@ -20,11 +20,14 @@ A modern, anonymous photo sharing platform with admin moderation. Built with Rea
 
 ## 🎥 Demo
 
-**[📹 Watch Full Demo Video](https://github.com/B3H1Z/Anonymous-Realtime-Gallery/releases/download/v1.0.0/Screen-Capture-Anon-Gallery.mp4)**
+<video width="100%" controls>
+  <source src="https://github.com/B3H1Z/Anonymous-Realtime-Gallery/releases/download/v1.0.0/Screen-Capture-Anon-Gallery.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
-*See the Anonymous Gallery in action - from photo upload to admin moderation!*
+*Demo showing the Anonymous Gallery features - photo upload, gallery view, and admin moderation panel*
 
-https://github.com/B3H1Z/Anonymous-Realtime-Gallery/releases/download/v1.0.0/Screen-Capture-Anon-Gallery.mp4
+**[📹 Direct Link to Video](https://github.com/B3H1Z/Anonymous-Realtime-Gallery/releases/download/v1.0.0/Screen-Capture-Anon-Gallery.mp4)** (if video doesn't load above)
 
 ## 🚀 Quick Start
 
