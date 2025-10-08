@@ -61,3 +61,7 @@ coverage/
 .cache/
 .parcel-cache/
 .vite/
+
+# Test utilities and scripts
+generate-test-images.js
+verify-database.js

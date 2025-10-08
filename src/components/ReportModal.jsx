@@ -9,35 +9,35 @@ const ReportModal = ({ isOpen, onClose, onReport, photoId, isLoading }) => {
     {
       id: 'inappropriate_content',
       label: 'Inappropriate Content',
-      description: '  Inappropriate Content ‌   is',
+      description: 'Contains inappropriate or offensive content',
       icon: AlertTriangle,
       color: 'text-red-400'
     },
     {
       id: 'spam',
       label: 'Spam',
-      description: '   Spam is',
+      description: 'Photo appears to be spam or unwanted content',
       icon: MessageSquare,
       color: 'text-yellow-400'
     },
     {
       id: 'violence',
-      label: 'Violent',
-      description: '   Violent  ‌ is',
+      label: 'Violent Content',
+      description: 'Contains violent or disturbing imagery',
       icon: Shield,
       color: 'text-orange-400'
     },
     {
       id: 'copyright_violation',
       label: 'Copyright Violation',
-      description: 'Photo contains copyrighted content',
+      description: 'Photo contains copyrighted content without permission',
       icon: Eye,
       color: 'text-purple-400'
     },
     {
       id: 'other',
       label: 'Other',
-      description: 'There is another reason to report this photo',
+      description: 'Report for another reason not listed above',
       icon: Flag,
       color: 'text-gray-400'
     }
@@ -76,22 +76,22 @@ const ReportModal = ({ isOpen, onClose, onReport, photoId, isLoading }) => {
         >
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-2">
+              <Flag className="text-orange-400" size={24} />
+              <h3 className="text-xl font-bold text-white">Report Photo</h3>
+            </div>
             <button
               onClick={handleClose}
-              className="text-gray-400 hover:text-white transition-colors order-2"
+              className="text-gray-400 hover:text-white transition-colors"
               disabled={isLoading}
             >
               <X size={24} />
             </button>
-            <div className="flex items-center gap-2 order-1">
-              <h3 className="text-xl font-bold text-white order-2">Report Photo</h3>
-              <Flag className="text-orange-400 order-1" size={24} />
-            </div>
           </div>
 
           {/* Reason Selection */}
           <div className="space-y-3 mb-6">
-            <p className="text-gray-300 text-sm mb-4 text-right">
+            <p className="text-gray-300 text-sm mb-4">
               Please select the reason for reporting this photo:
             </p>
 
@@ -104,18 +104,18 @@ const ReportModal = ({ isOpen, onClose, onReport, photoId, isLoading }) => {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setSelectedReason(reason.id)}
                   disabled={isLoading}
-                  className={`w-full p-4 rounded-xl border-2 transition-all text-right ${
+                  className={`w-full p-4 rounded-xl border-2 transition-all text-left ${
                     selectedReason === reason.id
                       ? 'border-orange-400 bg-orange-400/10 text-white'
                       : 'border-gray-700 bg-gray-800/50 text-gray-300 hover:border-gray-600 hover:bg-gray-800'
                   } ${isLoading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
                 >
                   <div className="flex items-start gap-3">
-                    <div className="flex-1 text-right order-2">
+                    <Icon className={`mt-1 ${reason.color} flex-shrink-0`} size={20} />
+                    <div className="flex-1 text-left">
                       <div className="font-medium text-white">{reason.label}</div>
                       <div className="text-sm text-gray-400 mt-1">{reason.description}</div>
                     </div>
-                    <Icon className={`mt-1 ${reason.color} flex-shrink-0 order-1`} size={20} />
                   </div>
                 </motion.button>
               )
@@ -123,16 +123,7 @@ const ReportModal = ({ isOpen, onClose, onReport, photoId, isLoading }) => {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex gap-3 flex-row-reverse">
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={handleSubmit}
-              disabled={!selectedReason || isLoading}
-              className="flex-1 px-4 py-3 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-xl font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isLoading ? 'in  ...' : ''}
-            </motion.button>
+          <div className="flex gap-3">
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -141,6 +132,15 @@ const ReportModal = ({ isOpen, onClose, onReport, photoId, isLoading }) => {
               className="flex-1 px-4 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-xl font-medium transition-colors disabled:opacity-50"
             >
               Cancel
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={handleSubmit}
+              disabled={!selectedReason || isLoading}
+              className="flex-1 px-4 py-3 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-xl font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isLoading ? 'Submitting...' : 'Submit Report'}
             </motion.button>
           </div>
         </motion.div>
