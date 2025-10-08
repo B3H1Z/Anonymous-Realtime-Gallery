@@ -18,6 +18,14 @@ A modern, anonymous photo sharing platform with admin moderation. Built with Rea
 - **📊 Analytics**: Google Analytics integration for tracking
 - **🌐 PWA Ready**: Progressive Web App capabilities
 
+## 🎥 Demo
+
+**[📹 Watch Full Demo Video](https://github.com/B3H1Z/Anonymous-Realtime-Gallery/releases/download/v1.0.0/Screen-Capture-Anon-Gallery.mp4)**
+
+*See the Anonymous Gallery in action - from photo upload to admin moderation!*
+
+https://github.com/B3H1Z/Anonymous-Realtime-Gallery/releases/download/v1.0.0/Screen-Capture-Anon-Gallery.mp4
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -275,9 +283,6 @@ For support or questions:
 - Ensure proper file permissions
 - Check `.env` configuration
 
-## 📸 Screenshots
 
 
 ---
-
-**Anonymous Online Gallery** - Share photos anonymously, one picture at a time! 📸✨
